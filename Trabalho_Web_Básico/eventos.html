@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo.css" type="text/css">
+        <title>Rodando no Tempo</title>
+        <style>
+
+            .evento-descricao{
+                border: 2px solid #fff;
+                background: linear-gradient(to right, palevioletred, pink, blue);
+                border-radius: 8px 8px 0 0;
+                color: #000;
+                font-weight: bold;
+            }
+
+            #tabela-evento{
+                border: 2px solid #fff;
+                background: linear-gradient(to right, palevioletred, pink, blue);
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 25px;
+                border-radius: 0 0 8px 8px;
+                color: #000;
+                font-weight: bold;
+            }
+
+            #tabela-evento-2{
+                border: 2px solid #fff;
+                background: linear-gradient(to right, palevioletred, pink, blue);
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 25px;
+                border-radius: 0 0 8px 8px;
+                color: #000;
+                font-weight: bold;
+            }
+
+            td{
+                border: 2px solid #fff;
+                border-radius: 8px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="img-background"></div>
+            <header>
+                <h2 class="logo">RODANDO NO TEMPO</h2>
+                <nav class="navigation">
+                    <a href="pag_inicial.html">HOME</a>
+                    <a href="eventos.html">EVENTOS</a>
+                    <a href="fotos_curiosidades.html">FOTOS E CURIOSIDADES</a>
+                    <a href="sobre.html">SOBRE</a>
+                    <a href="contatos.html">INSCREVA-SE</a>
+                    <button class="btnLogin-popup">LOGIN</button>
+                </nav>
+            </header>
+            <section>
+                <div class="evento-descricao">
+                    <h2>Encontro de Carros Antigos</h2>
+                    <p>Data: 20 de Outubro. 2023</p>
+                    <p>Local: Praça Central</p>
+                    <p>Descrição: Um evento incrível que reúne amantes de carros antigos. 
+                        Venha conferir algumas das máquinas mais clássicas da história automotiva.
+                    </p>
+                </div>
+                <table id="tabela-evento">
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Atividade</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09:00 - 10:30</td>
+                            <td>Exposição de Carros Antigos</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>11:00 - 12:30</td>
+                            <td>Concurso de Restauração</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>12:30 - 14:00</td>
+                            <td>Corrida de Arrancada</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <script>
+                    const transparentEventTable = document.getElementById('tabela-evento');
+
+                    const transparentRows = transparentEventTable.querySelectorAll('tbody tr');
+
+                    transparentRows.forEach(row => {
+                        const buyTicketsButton = document.createElement('button');
+                        buyTicketsButton.textContent = 'Comprar Ingressos';
+                        buyTicketsButton.addEventListener('click', () => {
+                            const eventData = row.querySelector('td:nth-child(2)').textContent;
+                                alert(`Compre seus ingressos para: ${eventData}`);
+                            });
+
+                        const actionCell = row.querySelector('td:last-child');
+                        actionCell.appendChild(buyTicketsButton);
+                    });
+                </script>
+
+                <div class="evento-descricao">
+                    <h2>Encontro de Carros JDM</h2>
+                    <p>Data: 15 de Novembro. 2023</p>
+                    <p>Local: Parque do Lago</p>
+                    <p>Descrição: Um evento automobilístico que reúne entusiastas de veículos japoneses, especialmente aqueles que são projetados para o mercado interno do Japão.</p>
+                </div>
+                <table id="tabela-evento-2">
+                    <thead class="tabela-cabecalho">
+                        <tr>
+                            <th>Hora</th>
+                            <th>Atividade</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tabela-corpo">
+                        <tr>
+                            <td>12:00 - 13:30</td>
+                            <td style="margin-left: 5px;">Exposição de Carros JDM</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>14:00 - 15:00</td>
+                            <td>Desfile dos carros</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>15:30 - 16:30</td>
+                            <td>Drift</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <script>
+                    const transparentEventTable2 = document.getElementById('tabela-evento-2');
+
+                    const transparentRows2 = transparentEventTable2.querySelectorAll('tbody tr');
+
+                    transparentRows2.forEach(row => {
+                        const buyTicketsButton = document.createElement('button');
+                        buyTicketsButton.textContent = 'Comprar Ingressos';
+                        buyTicketsButton.addEventListener('click', () => {
+                            const eventData = row.querySelector('td:nth-child(2)').textContent;
+                                alert(`Compre seus ingressos para: ${eventData}`);
+                            });
+
+                        const actionCell = row.querySelector('td:last-child');
+                        actionCell.appendChild(buyTicketsButton);
+                    });
+                </script>
+            </section>
+            <footer>
+                <p>&copy; 2023 Eventos de Carros</p>
+            </footer>
+        </main>
+    </body>
+</html>

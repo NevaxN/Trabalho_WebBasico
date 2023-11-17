@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo.css" type="text/css">
+        <title>Rodando no Tempo</title>
+        <style>
+
+        .card-list{
+            display: flex;
+        }
+
+        .card-1, .card-2, .card-3, .card-4{
+        margin: 100px auto 0;
+        width: 400px;
+        height: 600px;
+        perspective: 1000px;
+        }
+
+        .card__inner {
+        width: 100%;
+        height: 100%;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+        position: relative;
+        }
+
+        .card__inner.is-flipped {
+        transform: rotateY(180deg);
+        }
+
+        .card__face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .card__face--front {
+        background-image: linear-gradient(to bottom right, pink, blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .card__face--front h2 {
+        color: #FFF;
+        font-size: 32px;
+        }
+
+        .card__face--back {
+        background-color: #F3F3F3;
+        transform: rotateY(180deg);
+        }
+
+        .card__content {
+        width: 100%;
+        height: 100%;
+        }
+
+        .card__header {
+        position: relative;
+        padding: 30px 30px 40px;
+        }
+
+        .card__header:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(to bottom left, pink 10%, blue 115%);
+        z-index: -1;
+        border-radius: 0px 0px 50% 0px;
+        }
+
+        .car-img {
+        display: block;
+        width: 220px;
+        height: 128px;
+        margin: 0 auto 30px;
+        border-radius: 8px;
+        background-color: #FFF;
+        border: 5px solid #FFF;
+        object-fit: cover;
+        }
+
+        .card__header h2 {
+        color: #FFF;
+        font-size: 32px;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-align: center;
+        }
+
+        .card__body {
+        padding: 30px;
+        }
+
+        .card__body h3 {
+        color: #212121;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        }
+
+        .card__body p {
+        color: #212121;
+        font-size: 18px;
+        line-height: 1.4;
+        border: 2px solid blue;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="img-background"></div>
+            <header>
+                <h2 class="logo">RODANDO NO TEMPO</h2>
+                <nav class="navigation">
+                        <a href="pag_inicial.html">HOME</a>
+                        <a href="eventos.html">EVENTOS</a>
+                        <a href="fotos_curiosidades.html">FOTOS E CURIOSIDADES</a>
+                        <a href="sobre.html">SOBRE</a>
+                        <a href="contatos.html">INSCREVA-SE</a>
+                        <button class="btnLogin-popup">LOGIN</button>
+                </nav>
+            </header>
+            <section>
+                <div class="card-list">
+                    <div class="card-1">
+                        <div class="card__inner">
+                            <div class="card__face card__face--front">
+                                <h2>Card Carro</h2>
+                            </div>
+                            <div class="card__face card__face--back">
+                                <div class="card__content">
+                                    <div class="card__header">
+                                        <img src="img/Ferrari F40.jpg" alt="" class="car-img">
+                                        <h2>Ferrari F40</h2>
+                                    </div>
+                                    <div class="card__body">
+                                        <p>Fabricação(Ano): 1987</p>
+                                        <p>Motor: V8 Bi-Turbo</p>
+                                        <p>Potência: 478 cv</p>
+                                        <p>Velocidade Máxima: 367 km/h</p>
+                                        <p>Peso: 1110 kg</p>
+                                        <p>Consumo Médio: 9.7 km/L</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-2">
+                        <div class="card__inner">
+                            <div class="card__face card__face--front">
+                                <h2>Card Carro</h2>
+                            </div>
+                            <div class="card__face card__face--back">
+                                <div class="card__content">
+                                    <div class="card__header">
+                                        <img src="img/Ford-GT40.jpg" alt="" class="car-img">
+                                        <h2>Ford GT40</h2>
+                                    </div>
+                                    <div class="card__body">
+                                        <p>Fabricação(Ano): 1964</p>
+                                        <p>Motor: V8 7 Litros</p>
+                                        <p>Potência: 380 cv</p>
+                                        <p>Velocidade Máxima: 257 km/h</p>
+                                        <p>Peso: 910 kg</p>
+                                        <p>Consumo Médio: 2.3 km/L</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-3">
+                        <div class="card__inner">
+                            <div class="card__face card__face--front">
+                                <h2>Card Carro</h2>
+                            </div>
+                            <div class="card__face card__face--back">
+                                <div class="card__content">
+                                    <div class="card__header">
+                                        <img src="img/bugatti-3-600.jpg" alt="" class="car-img">
+                                        <h2>Bugatti Veyron</h2>
+                                    </div>
+                                    <div class="card__body">
+                                        <p>Fabricação(Ano): 2005</p>
+                                        <p>Motor: W16 8 Litros</p>
+                                        <p>Potência: 1001 cv</p>
+                                        <p>Velocidade Máxima: 431 km/h</p>
+                                        <p>Peso: 1888 kg</p>
+                                        <p>Consumo Médio: 5.88 km/L</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-4">
+                        <div class="card__inner">
+                            <div class="card__face card__face--front">
+                                <h2>Card Carro</h2>
+                            </div>
+                            <div class="card__face card__face--back">
+                                <div class="card__content">
+                                    <div class="card__header">
+                                        <img src="img/Ford Shelby Mustang GT500.jpg" alt="" class="car-img">
+                                        <h2>Ford Shelby Mustang GT500</h2>
+                                    </div>
+                                    <div class="card__body">
+                                        <p>Fabricação(Ano): 1967</p>
+                                        <p>Motor: V8 big block da família FE – 428 pol³</p>
+                                        <p>Potência: 360 cv</p>
+                                        <p>Velocidade Máxima: 288 km/h</p>
+                                        <p>Peso: 1680 kg</p>
+                                        <p>Consumo Médio: 9.1 km/L</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    const card = document.querySelectorAll(".card__inner");
+
+                    card.forEach((link) => {
+                        link.addEventListener('click', function(e) {
+                            this.classList.toggle('is-flipped');
+                        });
+                    });
+                </script>
+            </section>
+            <footer>
+                <p>&copy; 2023 Eventos de Carros</p>
+            </footer>
+        </main>
+    </body>
+</html>

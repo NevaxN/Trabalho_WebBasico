@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo.css" type="text/css">
+        <title>Rodando no Tempo</title>
+        <style>
+            .home-image{
+                display: block;
+                margin: 0;
+                text-align: center;
+                max-width: 100%;
+                padding: 0px;
+                object-fit: cover;
+            }
+            
+            .slideshow-container{
+                position: relative;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .slide-content{
+                text-align: center;
+                position: relative;
+            }
+            
+            .mySlides{
+                display: none;
+            }
+            
+            .mySlides img{
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .fade{
+                animation-name: fade;
+                animation-duration: 2s;
+            }
+            
+            @keyframes fade{
+                from{
+                    opacity: 0;
+                }
+                to{
+                    opacity: 1;
+                }
+            }
+            
+            .img-container{
+                border-radius: 8px;
+                margin: 20px auto 20px auto;
+                max-width: 100%;
+            }
+            
+            .dot-container{
+                text-align: center;
+                margin-top: 20px;
+            }
+            
+            .dot{
+                height: 10px;
+                width: 10px;
+                margin: 0 5px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                cursor: pointer;
+            }
+            
+            .active{
+                background-color: #333;
+            }
+            
+            .text{
+                text-align: center;
+                color: white;
+                position: relative;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px;
+                transform: translateY(0%);
+            }
+            .noticia-carro {
+                display: flex;
+                position: relative;
+                align-items: center;
+            }
+            
+            .noticia-imagem {
+                flex: 1;
+                margin-right: 10px;
+            }
+            
+            .noticia-imagem img {
+                display: flex;
+                position: absolute;
+                max-width: 250px;
+                border-radius: 8px;
+                left: 40px;
+                bottom: -10px;
+            }
+            
+            .noticia-conteudo {
+                flex: 2;
+                background-color: #bbb;
+                opacity: 0.8;
+                border: 1px solid;
+                border-radius: 8px;
+                padding: 10px;
+                position: relative;
+                right: 17%;
+                z-index: -1;
+            }
+
+            .noticia-conteudo-titulo{
+                font-size: 1.7em;
+                color: #000;
+                font-weight: bolder;
+                position: relative;
+            }
+
+            .noticia-conteudo-texto{
+                color: #000;
+                text-align: left;
+                font-weight: 600;
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="img-background"></div>
+            <header>
+                <h2 class="logo">RODANDO NO TEMPO</h2>
+                <nav class="navigation">
+                        <a href="pag_inicial.html">HOME</a>
+                        <a href="eventos.html">EVENTOS</a>
+                        <a href="fotos_curiosidades.html">FOTOS E CURIOSIDADES</a>
+                        <a href="sobre.html">SOBRE</a>
+                        <a href="contatos.html">INSCREVA-SE</a>
+                        <button class="btnLogin-popup">LOGIN</button>
+                </nav>
+            </header>
+            <section>
+                <div class="img-container">
+                    <div class="mySlides fade">
+                        <div class="slide-content">
+                            <img src="img/Ford-GT40.jpg" alt="Imagem 1" class="home-image">
+                            <div class="text">O FORD GT40, foi desenvolvido  por ordem de Henry Ford II e produzido pela “Ford Motor Company” para correr nas 24 horas de Le Mans e destruir o reinado da Ferrari,
+                                ele ficou popularmente conhecido como o "Matador de Ferraris".
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="slide-content">
+                            <img src="img/Ferrari F40.jpg" alt="Imagem 2" class="home-image">
+                            <div class="text">A F40 continua sendo destaque entre todas as Ferrari, especiais ou não, mesmo passados 30 anos o F40. 
+                                Uma das razões é o fato de ter sido a última Ferrari que nasceu com a aprovação de Enzo Ferrari.
+                                Além do mais, foi um modelo voltado para as ruas, um carro de corrida voltado para andar em cidades e centros urbanos.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="slide-content">
+                            <img src="img/Bugatti Veyron.jpg" alt="Imagem 3" class="home-image">
+                            <div class="text">O Bugatti Veyron 16.4 Grand Sport Vitesse é uma versão do Grand Sport com o motor do Super Sport. 
+                                Produz uma potência máxima de 1.200 cv a 6.400 rpm e torque de 1.500 N·m a 3.000–5.000 rpm. Vai de 0–100 km/h em 2,6 segundos. 
+                                É considerado o carro de teto aberto mais rápido do mundo, atingindo 408,84 km/h.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dot-container">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <script>
+                    let slideIndex = 0;
+                    showSlides();
+
+                    function showSlides(){
+                        let slides = document.getElementsByClassName("mySlides");
+                        let dots = document.getElementsByClassName("dot");
+
+                        for (let i = 0; i < slides.length; i++){
+                            slides[i].style.display = "none";
+                        }
+
+                        slideIndex++;
+
+                        if (slideIndex > slides.length){
+                            slideIndex = 1;
+                        }
+
+                        for (let i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+
+                        slides[slideIndex - 1].style.display = "block";
+                        dots[slideIndex - 1].className += " active";
+
+                        setTimeout(showSlides, 5000);
+                    }
+                </script>
+            
+                <a href="noticia.html" style="text-decoration: none;">
+                    <div class="noticia-carro">
+                        <div class="noticia-imagem">
+                            <img src="img/Ford-GT40-News.jpg" alt="item-carro">
+                        </div>
+                        <div class="noticia-conteudo">
+                            <h3 class="noticia-conteudo-titulo">Le Mans 1966: a prova banhada a vingança e com final polêmico</h3>
+                            <p class="noticia-conteudo-texto">
+                                Apesar de dominada por um modelo, o Ford GT, a edição de 1966 das 24 Horas de Le Mans tem uma história daquelas que entram para o rol de romances do automobilismo. Tanto que um filme produzido em Hollywood será lançado em novembro de 2019 baseado nos fatos que levaram a esta corrida e com o apelativo nome “Ford vs Ferrari”.
+                                <br>
+                                Com certeza falaremos mais deste filme aqui no Projeto Motor durante o ano e mais próximo de seu lançamento, mas aproveitando a semana de Le Mans, vamos contar aqui por que esta prova ficou tão marcada na história do evento.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </section>
+            <footer>
+                <h2>Site desenvolvido por Arthur Phelipe Mayer Santos e Lucas Gabriel de Moraes Carvalho</h2>
+                <p>&copy; 2023 Eventos de Carros</p>
+            </footer>
+        </main>
+    </body>
+</html>
